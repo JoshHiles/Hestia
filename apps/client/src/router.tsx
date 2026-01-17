@@ -1,10 +1,12 @@
 import { createRouter } from "@tanstack/react-router";
-import { Route as rootRoute } from "./routes/__root";
+import { routeTree } from './routeTree.gen'
 import { Route as indexRoute } from "./routes/index";
 
-const routeTree = rootRoute.addChildren([indexRoute]);
-
-export const router = createRouter({ routeTree });
+export const router = createRouter({ routeTree,
+   defaultPreload: 'intent',
+  defaultStaleTime: 5000,
+  scrollRestoration: true,
+ });
 
 declare module "@tanstack/react-router" {
   interface Register {

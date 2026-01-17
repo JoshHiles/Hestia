@@ -1,15 +1,16 @@
 {
-  "name": "bun-react-template",
+  "name": "client",
   "version": "0.1.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "bun --hot src/index.ts",
-    "build": "bun build ./src/index.html --outdir=dist --sourcemap --target=browser --minify --define:process.env.NODE_ENV='\"production\"' --env='BUN_PUBLIC_*'",
-    "start": "NODE_ENV=production bun src/index.ts"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "@mantine/core": "^8.3.12",
+    "@mantine/form": "^8.3.12",
     "@mantine/hooks": "^8.3.12",
     "@tanstack/react-query": "^5.90.18",
     "@tanstack/react-router": "^1.150.0",
@@ -17,8 +18,11 @@
     "react-dom": "^19"
   },
   "devDependencies": {
+    "@tanstack/router-plugin": "1.150.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@types/bun": "latest"
+    "@vitejs/plugin-react": "^4.4.1",
+    "typescript": "~5.7.3",
+    "vite": "^6.3.5"
   }
 }
