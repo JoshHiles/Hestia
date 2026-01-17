@@ -1,0 +1,10 @@
+{
+  "name": "hestia",
+  "packageManager": "bun@1.3.6",
+	"private": true,
+	"workspaces": [
+		"apps/*"
+	],
+  "scripts": {
+  }
+}
