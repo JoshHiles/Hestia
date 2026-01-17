@@ -7,12 +7,24 @@
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { App } from "./App";
+import { MantineProvider, ColorSchemeScript } from "@mantine/core";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { RouterProvider } from "@tanstack/react-router";
+import { theme } from "./theme";
+import { router } from "./router";
+
+import "@mantine/core/styles.css";
+
+const queryClient = new QueryClient();
 
 const elem = document.getElementById("root")!;
 const app = (
   <StrictMode>
-    <App />
+    <QueryClientProvider client={queryClient}>
+      <MantineProvider theme={theme} defaultColorScheme="dark">
+        <RouterProvider router={router} />
+      </MantineProvider>
+    </QueryClientProvider>
   </StrictMode>
 );
 

@@ -4,7 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="./logo.svg" />
-    <title>Bun + React</title>
+    <title>Hestia - A Forum for Humans</title>
+    <script>
+      // Prevent flash of wrong color scheme
+      (function() {
+        var colorScheme = localStorage.getItem('mantine-color-scheme-value');
+        if (colorScheme) {
+          document.documentElement.setAttribute('data-mantine-color-scheme', colorScheme);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
